@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不只是珍奶！台灣旅遊全攻略</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                            950: '#082f49',
+                        },
+                        accent: '#ff3e00',
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                        display: ['Outfit', 'Noto Sans TC', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #020617;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+        }
+
+        .hero-mask {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass-card px-6 py-3 rounded-full">
+            <div class="text-xl font-display font-bold tracking-tighter">
+                <span class="text-brand-400">M11408028</span> <span class="text-slate-400">Travel</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#" class="hover:text-brand-400 transition-colors">第一印象</a>
+                <a href="#" class="hover:text-brand-400 transition-colors">進化史</a>
+                <a href="#" class="hover:text-brand-400 transition-colors">主流玩法</a>
+                <a href="#" class="hover:text-brand-400 transition-colors">未來趨勢</a>
+            </div>
+            <button class="bg-brand-500 hover:bg-brand-400 text-white text-xs font-bold px-5 py-2.5 rounded-full transition-all transform hover:scale-105 active:scale-95">
+                立即探索
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex flex-col items-center justify-center pt-20 px-6">
+        <div class="absolute inset-0 z-0 overflow-hidden hero-mask opacity-60">
+            <img src='https://opal.google/board/blobs/aacd1643-ec2c-4eca-b4c7-c0f9aa5c7b52' alt='media_1' class="w-full h-full object-cover" />
+        </div>
+        
+        <div class="relative z-10 max-w-4xl text-center space-y-6 animate-fade-in-up">
+            <div class="inline-block px-4 py-1 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-400 text-sm font-semibold mb-4 tracking-widest uppercase">
+                Taiwan Travel Guide
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black font-display leading-[1.1] tracking-tight">
+                不只是珍奶！<br>
+                <span class="gradient-text">台灣旅遊全攻略</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed font-light">
+                從絕美秘境到老街之謎，教你玩出新高度。一起重新解構這座古稱「福爾摩沙」的迷人島嶼。
+            </p>
+            <div class="pt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="px-8 py-4 bg-white text-slate-900 rounded-full font-bold text-lg hover:bg-brand-400 hover:text-white transition-all">
+                    閱讀文章內容
+                </button>
+                <div class="text-slate-500 font-mono text-sm">
+                    學號：M11408028
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-slate-500">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-24 space-y-32">
+        
+        <!-- Section 1: Intro -->
+        <section class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8 animate-fade-in-up stagger-1">
+                <h2 class="text-4xl font-bold font-display leading-tight">
+                    <span class="text-brand-500 block text-lg mb-2">CHAPTER 01</span>
+                    這裡超酷！關於台灣旅遊的「第一印象」
+                </h2>
+                <p class="text-slate-400 leading-relaxed text-lg">
+                    別再只把台灣當成一個「有很多好吃小吃」的地方了，從地理與人文的角度來看，這裡簡直是個不可思議的微縮世界。
+                </p>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-1">山海任意門的地理奇蹟</h4>
+                            <p class="text-slate-400">早上在玉山吹冷風，下午就在東部斷崖看海。短短幾小時車程，植被從熱帶變換到寒帶。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-purple-500/20 flex items-center justify-center text-purple-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-1">不只是珍奶的文化熔爐</h4>
+                            <p class="text-slate-400">南島語族、漢人傳統、日治木造與戰後多元，完美融合在飲食與高密度夜市裡。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bento-item h-[500px] animate-fade-in-up stagger-2">
+                <img src='https://opal.google/board/blobs/aacd1643-ec2c-4eca-b4c7-c0f9aa5c7b52' alt='Taiwan Landscape' class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent flex items-end p-8">
+                    <p class="text-sm font-medium text-slate-300 italic">"在台灣，人情味是最好的導航。"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: History Bento Grid -->
+        <section class="space-y-12">
+            <div class="text-center space-y-4">
+                <h2 class="text-4xl font-bold font-display">時光機：那些年，我們的旅遊進化史</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">旅遊方式的演進，其實就是一部濃縮的社會變遷史。</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="md:col-span-2 glass-card p-8 rounded-[2rem] space-y-4">
+                    <span class="text-brand-400 font-mono text-sm">1950-70s</span>
+                    <h3 class="text-2xl font-bold">阿公阿嬤時代：國家級的壯遊</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        戰後初期，大家都在拚溫飽。最潮的觀光是去走剛開鑿完畢的橫貫公路，或在圓山大飯店前拍張照。這是一個將自然景觀視為國家建設成就的年代。
+                    </p>
+                </div>
+                <div class="glass-card p-8 rounded-[2rem] space-y-4">
+                    <span class="text-purple-400 font-mono text-sm">1980-90s</span>
+                    <h3 class="text-xl font-bold">消費解放</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        經濟起飛、「台灣錢淹腳目」。週休二日推行後，全家出動的主題樂園旅遊成為主流。
+                    </p>
+                </div>
+                <div class="glass-card p-8 rounded-[2rem] space-y-4">
+                    <span class="text-emerald-400 font-mono text-sm">2008-2019</span>
+                    <h3 class="text-xl font-bold">國際範</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        開放陸客、新南向政策。西門町聽見各國語言，台灣旅遊正式走向世界舞台。
+                    </p>
+                </div>
+                <div class="md:col-span-4 glass-card p-10 rounded-[2rem] flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/2 space-y-4">
+                        <span class="text-accent font-mono text-sm">NOW & FUTURE</span>
+                        <h3 class="text-3xl font-bold font-display">疫情後的覺醒：深度與數位</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            不再迷戀「上車睡覺、下車尿尿」的趕集式觀光。取而代之的是追求品質的深度體驗，以及高度依賴手機的智慧化數位旅行。
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 w-full h-48 bg-slate-900 rounded-2xl border border-slate-800 flex items-center justify-center p-4">
+                        <div class="text-center">
+                            <div class="text-brand-400 text-4xl font-black mb-2">QUALITY OVER QUANTITY</div>
+                            <div class="text-slate-500 text-xs tracking-widest uppercase">The New Standard of Travel</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Mainstream Gameplay -->
+        <section class="space-y-16">
+            <div class="flex flex-col md:flex-row justify-between items-end gap-6 border-b border-slate-800 pb-8">
+                <h2 class="text-4xl font-bold font-display">解密目前的「主流玩法」</h2>
+                <p class="text-slate-400 md:max-w-md">為什麼這些地方去不膩？因為它們代表了台灣的最高標準。</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="space-y-4 group">
+                    <div class="aspect-[4/5] overflow-hidden rounded-3xl bg-slate-900 border border-slate-800">
+                        <div class="w-full h-full flex items-center justify-center text-slate-700 group-hover:scale-110 transition-transform duration-500">
+                             <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl font-bold font-display">經典不敗款</h4>
+                    <p class="text-slate-400 text-sm">台北101、故宮、太魯閣、阿里山。這些名片提供了最穩定且具代表性的旅遊品質。</p>
+                </div>
+                <div class="space-y-4 group">
+                    <div class="aspect-[4/5] overflow-hidden rounded-3xl bg-slate-900 border border-slate-800">
+                        <div class="w-full h-full flex items-center justify-center text-slate-700 group-hover:scale-110 transition-transform duration-500">
+                             <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl font-bold font-display">IG 決定行程</h4>
+                    <p class="text-slate-400 text-sm">視覺導向的現代行銷。打卡上傳、獲得社群認同，是旅行體驗中不可或缺的一環。</p>
+                </div>
+                <div class="space-y-4 group">
+                    <div class="aspect-[4/5] overflow-hidden rounded-3xl bg-slate-900 border border-slate-800">
+                        <div class="w-full h-full flex items-center justify-center text-slate-700 group-hover:scale-110 transition-transform duration-500">
+                             <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl font-bold font-display">懶人包邏輯</h4>
+                    <p class="text-slate-400 text-sm">捷運可達、一站式吃喝玩樂。不用動腦就能享受假期的區域主題化玩法。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: The Downside (Refined list) -->
+        <section class="glass-card rounded-[3rem] p-12 md:p-20 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-[100px] -mr-32 -mt-32"></div>
+            <div class="relative z-10 grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-4xl font-bold font-display mb-6">悄悄話：<br><span class="text-accent">熱鬧背後的「小遺憾」</span></h2>
+                    <p class="text-slate-400 mb-8">身為一個有思考能力的旅人，我們不能只看見濾鏡裡的美好。這些是我們必須直面的結構性痛點：</p>
+                </div>
+                <div class="space-y-8">
+                    <div class="border-l-2 border-accent/30 pl-6 space-y-2">
+                        <h5 class="text-lg font-bold">老街複製人</h5>
+                        <p class="text-slate-400 text-sm">全台老街共用同一個批發商，缺乏在地文化 DNA 的深度挖掘。</p>
+                    </div>
+                    <div class="border-l-2 border-accent/30 pl-6 space-y-2">
+                        <h5 class="text-lg font-bold">物價 vs. 品質</h5>
+                        <p class="text-slate-400 text-sm">當物價與品質極度不對等，國人自然會選擇買張廉航機票出國。</p>
+                    </div>
+                    <div class="border-l-2 border-accent/30 pl-6 space-y-2">
+                        <h5 class="text-lg font-bold">文明與自然的拉扯</h5>
+                        <p class="text-slate-400 text-sm">過度開發對脆弱自然景觀的衝擊，原本該有的靜謐感蕩然無存。</p>
+                    </div>
+                    <div class="border-l-2 border-accent/30 pl-6 space-y-2">
+                        <h5 class="text-lg font-bold">馬路恐懼症</h5>
+                        <p class="text-slate-400 text-sm">行人地獄的臭名與交通的危險性，是距離頂級旅遊勝地待補足的學分。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Future -->
+        <section class="space-y-12">
+            <h2 class="text-4xl font-bold font-display text-center">未來的台灣旅遊長什麼樣？</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:bg-brand-900/20 hover:border-brand-500/50 transition-all duration-300">
+                    <div class="w-12 h-12 bg-green-500/20 text-green-400 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">永續旅遊</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">低碳路徑、減塑、總量管制。旅行不再只是消耗，而是能酷酷地保護環境。</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:bg-brand-900/20 hover:border-brand-500/50 transition-all duration-300">
+                    <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 21h6l-.75-4M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">帶上 AI 旅行</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">利用 AI 進行人流導引，或透過 AR/VR 技術重現古蹟當年的壯麗風貌。</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:bg-brand-900/20 hover:border-brand-500/50 transition-all duration-300">
+                    <div class="w-12 h-12 bg-yellow-500/20 text-yellow-400 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">數位遊牧</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">工作與旅行折疊。早晨山中手作，下午視訊會議，重新定義旅行時間。</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:bg-brand-900/20 hover:border-brand-500/50 transition-all duration-300">
+                    <div class="w-12 h-12 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">去二三線小鎮</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">苗栗、雲林、屏東。那裡沒有排隊人潮，只有純粹的人情與在地感動。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="max-w-4xl mx-auto text-center space-y-10 py-12 border-t border-slate-800">
+            <div class="w-20 h-1 bg-brand-500 mx-auto rounded-full"></div>
+            <h2 class="text-3xl font-bold font-display">💡 結語 (Call to Action)</h2>
+            <div class="space-y-6 text-xl text-slate-300 leading-relaxed font-light">
+                <p>
+                    從阿公時代的「走馬看花」，到年輕世代的「打卡上傳」，台灣旅遊正在經歷一場華麗的轉身——我們正努力走向「沈浸式」的深度體驗，試圖在環境永續與商業發展中找到平衡。
+                </p>
+                <p class="text-brand-400 font-bold">旅行，說到底不僅僅是身體的移動，更是思想的重置。</p>
+                <p>
+                    這個週末，你要選擇哪一種玩台灣的方式呢？是去挑戰一次無塑的低碳小旅行，還是找個沒聽過名字的二線小鎮去發呆？
+                </p>
+            </div>
+            
+            <div class="pt-8 glass-card p-10 rounded-[2.5rem]">
+                <h4 class="text-lg font-bold mb-6">分享你的「秘密口袋名單」</h4>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input type="text" placeholder="你的私藏秘境..." class="flex-grow bg-slate-950 border border-slate-800 rounded-full px-6 py-4 focus:outline-none focus:border-brand-500 transition-colors">
+                    <button class="bg-brand-500 hover:bg-brand-400 text-white font-bold px-10 py-4 rounded-full shadow-lg shadow-brand-500/20 transition-all">
+                        發表評論
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="fixed bottom-10 right-10 flex flex-col gap-4">
+        <button class="w-14 h-14 bg-white text-slate-900 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg>
+        </button>
+    </div>
+
+</body>
+</html>
